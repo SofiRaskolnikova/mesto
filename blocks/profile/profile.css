@@ -16,8 +16,8 @@
   .profile {
    justify-content: center;
   }
-}
 
-.profile:not(:last-child){
-  margin-bottom: 33px;
+  .profile:not(:last-child) {
+   margin-bottom: 33px;
+   }
 }

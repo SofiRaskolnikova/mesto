@@ -1,0 +1,17 @@
+.profile__botton-add {
+  background-image: url(../../../images/add_botton.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #fff;
+  background-color: #000;
+  min-height: 50px;
+  min-width: 150px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 651px) {
+  .profile__botton-add {
+    min-width: 282px;
+  }
+}

@@ -1,0 +1,9 @@
+.element__button{
+  background-image: url(../../../images/Vector.svg);
+  background-repeat: no-repeat;
+  border: none;
+  min-width: 22px;
+  min-height: 19px;
+  background-color: #fff;
+  flex-shrink: 0;
+}

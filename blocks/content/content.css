@@ -1,0 +1,41 @@
+.content{
+  margin: 0;
+  padding: 0 200px;
+}
+
+.content:not(:last-child){
+  margin-bottom: 68px;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 0 150px;
+  }
+}
+
+@media (max-width: 890px) {
+  .content {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 425px) {
+  .content {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .content {
+    padding: 0 19px;
+  }
+  .content:not(:last-child){
+    margin-bottom: 48px;
+  }
+}

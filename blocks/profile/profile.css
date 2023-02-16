@@ -1,0 +1,23 @@
+.profile{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 880px;
+  justify-content: space-between;
+}
+
+.profile:not(:last-child){
+  margin-bottom: 43px;
+}
+
+@media (max-width: 501px) {
+  .profile {
+   justify-content: center;
+  }
+}
+
+.profile:not(:last-child){
+  margin-bottom: 33px;
+}

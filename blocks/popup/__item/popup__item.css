@@ -1,0 +1,19 @@
+.popup__item {
+    border: 0;
+    max-height: 27px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #bcbcc4;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 17;
+    font-family: 'Inter', 'Arial', sans-serif;
+    padding: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
+}
+
+.popup__item:focus{
+  outline-color: #4285B4;
+}

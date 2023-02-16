@@ -1,0 +1,16 @@
+.popup__input-container{
+  border: none;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (max-width: 614px) {
+  .popup__input-container{
+    margin-bottom: 48px;
+  } 
+}

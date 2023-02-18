@@ -2,12 +2,14 @@
     border: 0;
     max-height: 27px;
     box-sizing: border-box;
-    border-bottom: 1px solid #bcbcc4;
+    border: none;
     background-color: transparent;
+    border-bottom: 1px solid #bcbcc4;
     font-size: 14px;
-    line-height: 17;
+    line-height: 17px;
     font-family: 'Inter', 'Arial', sans-serif;
-    padding: 0;
+    padding: 0 0 13px;
+    margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

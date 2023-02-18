@@ -11,5 +11,6 @@
 @media (min-width: 1281px) {
   .page {
     background-color: #000;
+    min-height: 100vh;
   }
 }

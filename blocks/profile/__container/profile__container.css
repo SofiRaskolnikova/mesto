@@ -9,5 +9,6 @@
 @media (max-width: 320px) {
   .profile__container {
     gap: 10px;
+    padding-left: 33px;
   }
 }

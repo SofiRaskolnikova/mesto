@@ -15,4 +15,10 @@
    justify-content: center;
    text-align: center;
   }
+  
+  @media (max-width: 651px) {
+    .profile__content {
+      margin-bottom: 34px;
+    }
+  }
 }

@@ -19,10 +19,10 @@
         </div>
         <div class="profile__info">
           <div class="profile__container">
-            <h1 class="profile__title"></h1>
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
             <button type="button" class="button profile__button-edit"></button>
           </div>
-          <p class="profile__text"></p>
+          <p class="profile__text">Исследователь океана</p>
         </div>
         </div>
         <button class="button profile__botton-add"></button>
@@ -32,43 +32,43 @@
             <li class="element">
               <img class="element__image" src="./images/kirill-pershin_sobor.jpg" alt="Фото собора.">
                 <div class="element__container">
-                  <p class="element__title">Карачаевск</p>
-                  <button type="button" class="button element__button"></button>  
+                  <h2 class="element__title">Карачаевск</h2>
+                  <button type="button" class="element__button"></button>  
                 </div>
             </li>
             <li class="element">
                 <img class="element__image" src="./images/kirill-pershin_zakat.png" alt="Фото заката.">
                 <div class="element__container">
-                  <p class="element__title">Гора Эльбрус</p>
-                  <button type="button" class="button element__button"></button>  
+                  <h2 class="element__title">Гора Эльбрус</h2>
+                  <button type="button" class="element__button"></button>  
                 </div>
             </li>
             <li class="element">
                 <img class="element__image" src="./images/kirill-pershin_gora.jpg" alt="Фото горы.">
                 <div class="element__container">
-                  <p class="element__title">Домбай</p>
-                  <button type="button" class="button element__button"></button> 
+                  <h2 class="element__title">Домбай</h2>
+                  <button type="button" class="element__button"></button> 
                 </div>
             </li>
             <li class="element">
                 <img class="element__image" src="./images/kirill-pershin_zakat.png" alt="Фото заката.">
                 <div class="element__container">
-                  <p class="element__title">Гора Эльбрус</p>
-                  <button type="button" class="button element__button"></button> 
+                  <h2 class="element__title">Гора Эльбрус</h2>
+                  <button type="button" class="element__button"></button> 
                 </div>
             </li>
             <li class="element">
                 <img class="element__image" src="./images/kirill-pershin_gora.jpg" alt="Фото горы.">
                 <div class="element__container">
-                  <p class="element__title">Домбай</p>
-                  <button type="button" class="button element__button"></button> 
+                  <h2 class="element__title">Домбай</h2>
+                  <button type="button" class="element__button"></button> 
                 </div>
             </li>
             <li class="element">
                 <img class="element__image" src="./images/kirill-pershin_sobor.jpg" alt="Фото собора.">
                 <div class="element__container">
-                  <p class="element__title">Карачаево-Черкесия</p>
-                  <button type="button" class="button element__button"></button> 
+                  <h2 class="element__title">Карачаево-Черкесия</h2>
+                  <button type="button" class="element__button"></button> 
                 </div>
             </li>
           </ul>
@@ -78,19 +78,20 @@
       <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
   </div>
-  <section class="popup">
-    <form class="popup__form">
+  <div class="popup">
     <div class="popup__content">
      <h2 class="popup__title">Редактировать профиль</h2>
-      <fieldset class="popup__input-container">
-        <input type="text" placeholder="О себе" class="popup__item popup__item_input_name">
-        <input type="text" placeholder="Должность" class="popup__item popup__item_input_job">
-      </fieldset>
-     <button type="submit"  class="button popup__button-save">Сохранить</button>
+     <div class="popup__form">
+       <form method="post"  name="edit_form">
+        <fieldset class="popup__input-container">
+          <input type="text" name="user_name" placeholder="О себе" class="popup__item popup__item_input_name">
+          <input type="text" name="user_job" placeholder="Должность" class="popup__item popup__item_input_job">
+        </fieldset>
+        <button type="submit"  class="button popup__button-save">Сохранить</button>
+       </form>
     </div>
     <button type="button" class="button popup__button-close"></button>
-    </form>
-  </section>
+  </div>
   <script src="./script.js"></script>
 </body>
 </html>

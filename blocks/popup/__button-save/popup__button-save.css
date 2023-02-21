@@ -1,6 +1,7 @@
 .popup__button-save{
   min-width: 358px;
   min-height: 50px;
+  border: none;
   background-color: #000;
   color: #fff;
   font-family: 'Inter', 'Arial', sans-serif;
@@ -11,6 +12,10 @@
   margin: 0;
   padding: 0;
   margin-bottom: 37px;
+}
+
+.popup__button-save:hover{
+  opacity: .8;
 }
 
 @media (max-width: 614px) {

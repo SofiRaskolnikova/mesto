@@ -1,11 +1,12 @@
 let editProfileButton = document.querySelector('.profile__button-edit');
 let editPopup = document.querySelector('.popup');
 let closePopupButton = document.querySelector('.popup__button-close');
+let savePopupButton = document.querySelector('.popup__button-save');
 let profileUserNameElement = document.querySelector('.profile__title');
 let profileJobElement = document.querySelector('.profile__text');
 let popupInputName = document.querySelector('.popup__item_input_name');
 let popupInputJob = document.querySelector('.popup__item_input_job');
-let formElement = document.querySelector('.profile__container');
+let formElement = document.querySelector('.popup__form');
 
 function openEditPopup () {
   popupInputName.value = profileUserNameElement.textContent;
@@ -29,6 +30,8 @@ function editUserInfo(evt) {
   profileJobElement.textContent = popupInputJob.value;
   
   closePopup();
+  
 };
 
 formElement.addEventListener('submit', editUserInfo);
+

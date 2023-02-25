@@ -6,6 +6,7 @@
   min-height: 19px;
   background-color: #fff;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .element__button:hover{

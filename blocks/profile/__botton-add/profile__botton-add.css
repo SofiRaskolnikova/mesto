@@ -10,7 +10,7 @@
   padding: 0;
 }
 
-@media (max-width: 651px) {
+@media (max-width: 696px) {
   .profile__botton-add {
     min-width: 282px;
     background-size: 16px 16px;

@@ -1,7 +1,6 @@
 .profile__text{
   font-family: 'Inter', 'Arial', sans-serif;
   color: #fff;
-  width: 294px;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
@@ -18,7 +17,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 440px) {
   .profile__text {
     font-size: 14px;
     line-height: 17px;

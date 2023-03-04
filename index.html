@@ -27,51 +27,7 @@
         </div>
         <button  type="button" class="button profile__botton-add"></button>
       </section>
-      <section class="elements" aria-label="Место под фотографии.">
-        <ul class="elements__list">
-            <li class="element">
-              <img class="element__image" src="./images/kirill-pershin_sobor.jpg" alt="Фото собора.">
-                <div class="element__container">
-                  <h2 class="element__title">Карачаевск</h2>
-                  <button type="button" class="element__button"></button>  
-                </div>
-            </li>
-            <li class="element">
-                <img class="element__image" src="./images/kirill-pershin_zakat.png" alt="Фото заката.">
-                <div class="element__container">
-                  <h2 class="element__title">Гора Эльбрус</h2>
-                  <button type="button" class="element__button"></button>  
-                </div>
-            </li>
-            <li class="element">
-                <img class="element__image" src="./images/kirill-pershin_gora.jpg" alt="Фото горы.">
-                <div class="element__container">
-                  <h2 class="element__title">Домбай</h2>
-                  <button type="button" class="element__button"></button> 
-                </div>
-            </li>
-            <li class="element">
-                <img class="element__image" src="./images/kirill-pershin_zakat.png" alt="Фото заката.">
-                <div class="element__container">
-                  <h2 class="element__title">Гора Эльбрус</h2>
-                  <button type="button" class="element__button"></button> 
-                </div>
-            </li>
-            <li class="element">
-                <img class="element__image" src="./images/kirill-pershin_gora.jpg" alt="Фото горы.">
-                <div class="element__container">
-                  <h2 class="element__title">Домбай</h2>
-                  <button type="button" class="element__button"></button> 
-                </div>
-            </li>
-            <li class="element">
-                <img class="element__image" src="./images/kirill-pershin_sobor.jpg" alt="Фото собора.">
-                <div class="element__container">
-                  <h2 class="element__title">Карачаево-Черкесия</h2>
-                  <button type="button" class="element__button"></button> 
-                </div>
-            </li>
-          </ul>
+      <section class="elements">
       </section>
     </main>
     <footer class="footer">
@@ -93,6 +49,31 @@
       <button type="button" class="button popup__button-close"></button>
     </div>
   </div>
+  <div class="popup popup-add">
+    <div class="popup__content">
+     <h2 class="popup__title">Новое место</h2>
+     <div class="popup__form">
+       <form method="post" name="add_form" id="form-add">
+        <fieldset class="popup__input-container">
+          <input type="text" name="plase_name" placeholder="Название" class="popup__item popup__item_plase_name">
+          <input type="url" name="place_url" placeholder="Ссылка на картинку" class="popup__item popup__item_place_url">
+        </fieldset>
+        <button type="submit" class="button popup__button-save popup-add__button-save">Создать</button>
+       </form>
+      </div>
+      <button type="button" class="button popup__button-close popup-add__button-close"></button>
+    </div>
+  </div>
+  <template id="card">
+    <article class="element">
+      <img class="element__image">
+        <div class="element__container">
+          <h2 class="element__title"></h2>
+          <button type="button" class="element__button"></button>
+          <button type="reset" class="element__button-reset"></button>
+        </div>
+    </article>
+</template>
   <script src="./scripts/script.js"></script>
 </body>
 </html>

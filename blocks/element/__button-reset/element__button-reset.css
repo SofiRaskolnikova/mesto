@@ -1,0 +1,17 @@
+.element__button-reset{
+  background-image: url(../../../images/reset_button.png);
+  background-repeat: no-repeat;
+  border: none;
+  min-width: 18px;
+  min-height: 19px;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+}
+
+.element__button-reset:hover{
+  opacity: .6;
+}

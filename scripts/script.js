@@ -51,36 +51,36 @@ const buttonClosePopupModalImg = popupModalImage.querySelector('.popup-image__bu
 const formAddElement = document.querySelector('#form-add');
 
 // Функция для открытия модального окна редактирования профиля
-function openPopups(popup) {
+function openPopup(popup) {
   popup.classList.add('popup_opened');
 }
 
-function closePopups(popup) {
+function closePopup(popup) {
   popup.classList.remove('popup_opened')
 }
 
 function openEditPopup() {
   popupInputName.value = profileUserNameElement.textContent;
   popupInputJob.value = profileJobElement.textContent;
-  openPopups(popupEditProfile)
+  openPopup(popupEditProfile)
 };
 
 buttonEditProfile.addEventListener('click', openEditPopup);
 
 // Функция для закрытия модального окна редактирования профиля
 function closeEditPopup () {
-  closePopups(popupEditProfile)
+  closePopup(popupEditProfile)
 };
 
 buttonClosePopupEdit.addEventListener('click', closeEditPopup);
 
 // Отправка информации из формы
-function editUserInfo(evt) {
+function editUserInfo() {
   evt.preventDefault();
   profileUserNameElement.textContent = popupInputName.value;
   profileJobElement.textContent = popupInputJob.value;
   
-  closePopups();
+  closePopup(popupEditProfile);
   
 };
 
@@ -129,11 +129,11 @@ initialCards.forEach(renderCard);
 buttonClosePopupModalImg.addEventListener('click', closeModalImgPopup);
 
 function openModalImgPopup () {
-  openPopups(popupModalImage)
+  openPopup(popupModalImage)
 };
 
 function closeModalImgPopup () {
-  closePopups(popupModalImage)
+  closePopup(popupModalImage)
 };
 
 // Функция для удаления карточки
@@ -145,14 +145,14 @@ function handleResetButtonClick(event) {
 
 // Функция для открытия модального окна добавления карточки
 function openAddPopup () {
-  openPopups(popupAdd) 
+  openPopup(popupAdd) 
 };
 
 buttonAddPrifile.addEventListener('click', openAddPopup);
 
 // Функция для закрытия модального окна добавления карточки
 function closeAddPopup () {
-  closePopups(popupAdd)
+  closePopup(popupAdd)
 };
 
 buttonClosePopupAdd.addEventListener('click', closeAddPopup);

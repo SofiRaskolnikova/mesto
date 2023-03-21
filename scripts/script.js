@@ -38,8 +38,8 @@ const buttonClosePopupEdit = document.querySelector('.popup-edit__button-close')
 const buttonClosePopupAdd= document.querySelector('.popup-add__button-close');
 const profileUserNameElement = document.querySelector('.profile__title');
 const profileJobElement = document.querySelector('.profile__text');
-const popupInputName = document.querySelector('.popup__item_input_name');
-const popupInputJob = document.querySelector('.popup__item_input_job');
+const popupInputName = document.querySelector('.popup__item_input-name');
+const popupInputJob = document.querySelector('.popup__item_input-job');
 const formProfileElement = document.querySelector('#form-edit');
 const buttonAddPrifile= document.querySelector('.profile__botton-add');
 const popupAdd = document.querySelector('.popup-add');
@@ -163,8 +163,8 @@ buttonClosePopupAdd.addEventListener('click', closeAddPopup);
 function handleFormAddSubmit(evt) {
   evt.preventDefault();
  const formAddElement = evt.target
- const name = formAddElement.querySelector('.popup__item_plase_name').value;
- const link = formAddElement.querySelector('.popup__item_place_url').value;
+ const name = formAddElement.querySelector('.popup__item_plase-name').value;
+ const link = formAddElement.querySelector('.popup__item_place-url').value;
  const alt = name; // Присваивание значения alt
  const item = {
   name,

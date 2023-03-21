@@ -14,6 +14,6 @@
   overflow: hidden;    
 }
 
-.popup__item:focus{
-  outline-color: #4285B4;
+.popup__error_visible {
+  border-bottom: 1px solid #FF0000;
 }

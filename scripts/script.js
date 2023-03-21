@@ -49,6 +49,8 @@ const modalImg = popupModalImage.querySelector('.popup-image__img');
 const modalImgText = popupModalImage.querySelector('.popup-image__text');
 const buttonClosePopupModalImg = popupModalImage.querySelector('.popup-image__button-close');
 const formAddElement = document.querySelector('#form-add');
+const popupList = Array.from(document.querySelectorAll('.popup'));
+
 
 // Функция для открытия модального окна редактирования профиля
 function openPopup(popup) {
@@ -75,7 +77,7 @@ function closeEditPopup () {
 buttonClosePopupEdit.addEventListener('click', closeEditPopup);
 
 // Отправка информации из формы
-function editUserInfo() {
+function editUserInfo(evt) {
   evt.preventDefault();
   profileUserNameElement.textContent = popupInputName.value;
   profileJobElement.textContent = popupInputJob.value;
@@ -145,7 +147,7 @@ function handleResetButtonClick(event) {
 
 // Функция для открытия модального окна добавления карточки
 function openAddPopup () {
-  openPopup(popupAdd) 
+  openPopup(popupAdd);
 };
 
 buttonAddPrifile.addEventListener('click', openAddPopup);
@@ -177,3 +179,30 @@ function handleFormAddSubmit(evt) {
 };
 
 formAddElement.addEventListener('submit', handleFormAddSubmit);
+
+//Закрытие попапа на Escape
+function closePopupByEsc(evt) {
+  popupList.forEach((popup) => {
+    if ( evt.key === "Escape") {
+      closePopup(popup);
+    }
+  }) 
+};
+
+document.addEventListener('keydown', closePopupByEsc);
+
+
+//Закрытие модального окна при нажатии вне области формы
+
+function closePopupByOverlay (evt) {
+  popupList.forEach((popup) => {
+    if (evt.target === evt.currentTarget) {
+      closePopup(popup);
+      document.body.style.overflow = '';
+    } 
+  })    
+};
+
+popupAdd.addEventListener('click', closePopupByOverlay);
+
+popupEditProfile.addEventListener('click', closePopupByOverlay);

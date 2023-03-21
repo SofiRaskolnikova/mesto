@@ -1,0 +1,8 @@
+.popup__item-error{
+  color: #FF0000;
+  font-size: 12px;
+  font-weight: 400;
+  max-width: 358px;
+  margin: 0;
+  padding: 0;
+}

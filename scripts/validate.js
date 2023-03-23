@@ -1,8 +1,7 @@
 function showInputError(errorTextElement, validationMessage, activeErrorClass, input, errorClass) {
   input.classList.add(errorClass)
   errorTextElement.textContent = validationMessage;
-  errorTextElement.classList.add(activeErrorClass);
-  
+  errorTextElement.classList.add(activeErrorClass); 
 };
 
 function hideInputError(errorTextElement, activeErrorClass, input, errorClass) {
@@ -11,7 +10,7 @@ function hideInputError(errorTextElement, activeErrorClass, input, errorClass) {
   errorTextElement.textContent = '';
 };
 
-function disableButton(submitButton, invalidSubmitButtonClass) {
+export function disableButton(submitButton, invalidSubmitButtonClass) {
   submitButton.classList.add(invalidSubmitButtonClass);
   submitButton.disabled = true;
 };
@@ -31,7 +30,7 @@ function checkInputValidity(input, errorClassTemplate, activeErrorClass, errorCl
   }
 };
 
-function toggleButtonState(submitButton, invalidSubmitButtonClass, inputList) {
+ function toggleButtonState(submitButton, invalidSubmitButtonClass, inputList) {
   if(!hasInvalidInput(inputList)) {
     enableButton(submitButton, invalidSubmitButtonClass);
   } else {
@@ -68,7 +67,7 @@ function enableValidation(config) {
   })
 };
 
-enableValidation({
+export const validationConfig = {
   formSelector: '.form',
   inputSelector: '.popup__item',
   errorClassTemplate: '.popup__item-error_type_',
@@ -76,4 +75,6 @@ enableValidation({
   submitButtonSelector: '.popup__button-save',
   invalidSubmitButtonClass: 'popup__button_disable',
   errorClass: 'popup__error_visible'
-})
+};
+
+enableValidation(validationConfig)

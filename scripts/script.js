@@ -1,3 +1,6 @@
+import {disableButton} from './validate.js';
+import {validationConfig} from './validate.js';
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -41,7 +44,7 @@ const profileJobElement = document.querySelector('.profile__text');
 const popupInputName = document.querySelector('.popup__item_input-name');
 const popupInputJob = document.querySelector('.popup__item_input-job');
 const formProfileElement = document.querySelector('#form-edit');
-const buttonAddPrifile= document.querySelector('.profile__botton-add');
+const buttonAddPrifile = document.querySelector('.profile__botton-add');
 const popupAdd = document.querySelector('.popup-add');
 const elements = document.querySelector('.elements');
 const popupModalImage = document.querySelector('.popup-image');
@@ -50,15 +53,20 @@ const modalImgText = popupModalImage.querySelector('.popup-image__text');
 const buttonClosePopupModalImg = popupModalImage.querySelector('.popup-image__button-close');
 const formAddElement = document.querySelector('#form-add');
 const popupList = Array.from(document.querySelectorAll('.popup'));
+const namePopupInput = formAddElement.querySelector('.popup__item_plaсe-name');
+const linkPopupInput = formAddElement.querySelector('.popup__item_place-url');
+const buttonSavePopupAdd = document.querySelector('.popup-add__button-save');
 
 
 // Функция для открытия модального окна редактирования профиля
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupByEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened')
+  document.removeEventListener('keydown', closePopupByEsc);
 }
 
 function openEditPopup() {
@@ -148,6 +156,7 @@ function handleResetButtonClick(event) {
 // Функция для открытия модального окна добавления карточки
 function openAddPopup () {
   openPopup(popupAdd);
+  disableButton(buttonSavePopupAdd, validationConfig.invalidSubmitButtonClass);
 };
 
 buttonAddPrifile.addEventListener('click', openAddPopup);
@@ -159,38 +168,33 @@ function closeAddPopup () {
 
 buttonClosePopupAdd.addEventListener('click', closeAddPopup);
 
+
 // Создание новой карточки и добавление новых объектов в массив
 function handleFormAddSubmit(evt) {
   evt.preventDefault();
- const formAddElement = evt.target
- const name = formAddElement.querySelector('.popup__item_plase-name').value;
- const link = formAddElement.querySelector('.popup__item_place-url').value;
- const alt = name; // Присваивание значения alt
- const item = {
-  name,
-  link,
-  alt
- }
+ const formAddElement = evt.target;
+ const nameValue = namePopupInput.value;
+ const linkValue = linkPopupInput.value
+ const newCard = {
+   name: nameValue,
+   link: linkValue,
+   alt: nameValue
+}
 
- renderCard(item);
+ renderCard(newCard);
  closeAddPopup()
  formAddElement.reset()
- 
 };
 
 formAddElement.addEventListener('submit', handleFormAddSubmit);
 
 //Закрытие попапа на Escape
 function closePopupByEsc(evt) {
-  popupList.forEach((popup) => {
     if ( evt.key === "Escape") {
-      closePopup(popup);
+      const openedPopup = document.querySelector('.popup_opened');
+      closePopup();
     }
-  }) 
 };
-
-document.addEventListener('keydown', closePopupByEsc);
-
 
 //Закрытие модального окна при нажатии вне области формы
 
@@ -206,3 +210,9 @@ function closePopupByOverlay (evt) {
 popupAdd.addEventListener('click', closePopupByOverlay);
 
 popupEditProfile.addEventListener('click', closePopupByOverlay);
+
+popupModalImage.addEventListener('click', closePopupByOverlay);
+
+
+
+

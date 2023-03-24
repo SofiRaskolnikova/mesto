@@ -192,7 +192,7 @@ formAddElement.addEventListener('submit', handleFormAddSubmit);
 function closePopupByEsc(evt) {
     if ( evt.key === "Escape") {
       const openedPopup = document.querySelector('.popup_opened');
-      closePopup();
+      closePopup(openedPopup);
     }
 };
 

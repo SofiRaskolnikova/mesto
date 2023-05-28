@@ -1,4 +1,4 @@
-import {openPopup, closePopup, popupAdd}  from "./script.js";
+import {openPopup}  from "./script.js";
 
 const initialCards = [
   {
@@ -35,14 +35,11 @@ const initialCards = [
 ];
 
 const popupModalImage = document.querySelector('.popup-image');
-const formAddElement = document.querySelector('#form-add');
-const namePopupInput = formAddElement.querySelector('.popup__item_plaсe-name');
-const linkPopupInput = formAddElement.querySelector('.popup__item_place-url');
 const modalImg = document.querySelector('.popup-image__img');
 const modalImgText = popupModalImage.querySelector('.popup-image__text');
-const buttonClosePopupModalImg = popupModalImage.querySelector('.popup-image__button-close');
 
-class Card{
+
+class Card {
   constructor(data, templateSelector) {
     this._name = data.name;
     this._link = data.link;
@@ -59,21 +56,24 @@ class Card{
       return cardElement;
   }
     
-  _generateCard(){
+  generateCard(){
     this._element = this._getTemplate();
     this._itemTitle = this._element.querySelector('.element__title');
     this._itemImage = this._element.querySelector('.element__image');
     this._likeButton = this._element.querySelector('.element__button');
     this._resetButton = this._element.querySelector('.element__button-reset');
+    
    
     this._setEventListeners();
     this._itemTitle.textContent = this._name;
     this._itemImage.src = this._link;
+    this._itemImage.alt = this._name;
 
 
     return this._element;
   }
 
+  
   _clickLikeButton() {
     this._likeButton.classList.toggle('element__button_active'); 
   }
@@ -85,6 +85,7 @@ class Card{
   _showModalImgPopup(link, name) {
     modalImg.src = link;
     modalImgText.textContent = name;
+    modalImg.alt = name;
     openPopup(popupModalImage);
   }
 
@@ -99,38 +100,11 @@ class Card{
 
     this._itemImage.addEventListener('click',() => {
       this._showModalImgPopup(this._link, this._name);
-    });
-
-    buttonClosePopupModalImg.addEventListener('click', () => {
-      closePopup(popupModalImage)
-    })
+    }); 
   }
 }
 
-initialCards.forEach((item) => {
-  const card = new Card(item, '#card');
-  const cardElement = card._generateCard();
-  document.querySelector('.elements').prepend(cardElement)
-})
-
-function handleFormAddSubmit(evt) {
-  evt.preventDefault();
-  const nameValue = namePopupInput.value;
-  const linkValue = linkPopupInput.value
-  const newCard = {
-    name: nameValue,
-    link: linkValue,
-    alt: nameValue
-  }
-   
-  const card = new Card(newCard, '#card');
-  const cardElement = card._generateCard();
-  document.querySelector('.elements').prepend(cardElement)
-    closePopup(popupAdd)
-    formAddElement.reset()
-};
-   
-formAddElement.addEventListener('submit', handleFormAddSubmit);
+export {Card, initialCards}
 
     
 

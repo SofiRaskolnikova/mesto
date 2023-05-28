@@ -1,4 +1,6 @@
-import {FormValidator} from './FormValidator.js'
+import {FormValidator} from './FormValidator.js';
+import {Card, initialCards} from './Card.js';
+
 
 const config = {
   formSelector : '.form',
@@ -24,15 +26,23 @@ const popupAdd = document.querySelector('.popup-add');
 const popupModalImage = document.querySelector('.popup-image');
 const formAddElement = document.querySelector('#form-add');
 const popupList = Array.from(document.querySelectorAll('.popup'));
+const buttonClosePopupModalImg = popupModalImage.querySelector('.popup-image__button-close');
+const namePopupInput = formAddElement.querySelector('.popup__item_plaсe-name');
+const linkPopupInput = formAddElement.querySelector('.popup__item_place-url');
+const cardElements = document.querySelector('.elements');
+const profileFormValidator = new FormValidator(config, formProfileElement)
+const newCardFormValidator = new FormValidator(config, formAddElement)
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupByEsc);
+ 
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened')
   document.removeEventListener('keydown', closePopupByEsc);
+ 
 }
 
 function openEditPopup() {
@@ -71,12 +81,10 @@ function closePopupByEsc(evt) {
 
 //Закрытие модального окна при нажатии вне области формы
 function closePopupByOverlay (evt) {
-  popupList.forEach((popup) => {
     if (evt.target === evt.currentTarget) {
       closePopup(popup);
       document.body.style.overflow = '';
-    } 
-  })    
+    }     
 };
 
 popupAdd.addEventListener('click', closePopupByOverlay);
@@ -95,14 +103,45 @@ function closeAddPopup () {
 };
 
 buttonClosePopupAdd.addEventListener('click', closeAddPopup);
+buttonClosePopupModalImg.addEventListener('click', () => {
+  closePopup(popupModalImage)
+})
 
-const profileFormValidator = new FormValidator(config, formProfileElement)
-const newCardFormValidator = new FormValidator(config, formAddElement)
+function createCard(item) { 
+  const card = new Card(item, '#card');
+  const cardElement = card.generateCard();
+  return cardElement;
+} 
 
-profileFormValidator.enableValidation()
-newCardFormValidator.enableValidation()
+function renderCard(item) { 
+  const newItem = createCard(item);
+  cardElements.prepend(newItem); 
+}
 
+function handleFormAddSubmit(evt) {
+  evt.preventDefault();
+  const nameValue = namePopupInput.value;
+  const linkValue = linkPopupInput.value
+  const newCard = {
+    name: nameValue,
+    link: linkValue,
+    alt: nameValue
+  }
+   
+  renderCard(newCard);
+  closePopup(popupAdd);
+  formAddElement.reset();
+  newCardFormValidator.enableValidation();
+};
+   
+formAddElement.addEventListener('submit', handleFormAddSubmit);
 
+initialCards.forEach((item) => {
+  const cardElement = createCard(item);
+  cardElements.prepend(cardElement) 
+})
 
+profileFormValidator.enableValidation();
+newCardFormValidator.enableValidation();
 
-export {openPopup, closePopup, popupAdd}
+export {openPopup}

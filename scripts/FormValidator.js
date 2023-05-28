@@ -74,11 +74,9 @@ class FormValidator {
   };
   
   enableValidation() {
-    this._inputList;//селектор для инпутов
     this._submitButton;
     this._setEventListeners(this._form);
-  }
-      
+  }      
 }
 
 export {FormValidator}

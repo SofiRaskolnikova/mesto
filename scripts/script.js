@@ -80,11 +80,10 @@ function closePopupByEsc(evt) {
 };
 
 //Закрытие модального окна при нажатии вне области формы
-function closePopupByOverlay (evt) {
-    if (evt.target === evt.currentTarget) {
-      closePopup(popup);
-      document.body.style.overflow = '';
-    }     
+function closePopupByOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt.currentTarget);
+  }
 };
 
 popupAdd.addEventListener('click', closePopupByOverlay);

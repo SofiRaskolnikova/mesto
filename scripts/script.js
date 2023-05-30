@@ -130,7 +130,7 @@ function handleFormAddSubmit(evt) {
   renderCard(newCard);
   closePopup(popupAdd);
   formAddElement.reset();
-  newCardFormValidator.enableValidation();
+  newCardFormValidator.disableButton()
 };
    
 formAddElement.addEventListener('submit', handleFormAddSubmit);

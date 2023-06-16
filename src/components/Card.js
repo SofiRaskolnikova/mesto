@@ -1,6 +1,6 @@
 export default class Card {
   constructor(cardData, templateSelector, openImagePopup) {
-    this.cardData = cardData;
+    this._cardData = cardData;
     this._name = cardData.name;
     this._link = cardData.link;
     this._templateSelector = templateSelector;
@@ -40,11 +40,11 @@ export default class Card {
   }
 
   _handleResetButtonClick() {
-    this._resetButton.closest('.element').remove();
+    this._element.remove();
   }
 
   _showModalImgPopup = () => {
-    this._openImagePopup(this.cardData)
+    this._openImagePopup(this._cardData)
   }
 
   _setEventListeners() {
@@ -57,7 +57,7 @@ export default class Card {
     });
 
     this._itemImage.addEventListener('click',() => {
-      this._showModalImgPopup(this._link, this._name);
+      this._showModalImgPopup();
     }); 
   }
 }

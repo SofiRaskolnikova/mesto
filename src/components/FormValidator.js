@@ -11,17 +11,14 @@ export default class FormValidator {
     this._submitButton = this._form.querySelector(config.submitButtonSelector);
   }
 
-  _showInputError(input) {
-    input.classList.add(this._errorClass)
-    this._errorTextElement.textContent = input.validationMessage;
-    this._errorTextElement.classList.add(this._activeErrorClass); 
+  _showInputError(errorTextElement, input) {
+    input.classList.add(this._activeErrorClass)
+    errorTextElement.textContent = input.validationMessage;
   };
 
- 
-  _hideInputError(input) {
-    input.classList.remove(this._errorClass)
-    this._errorTextElement.classList.remove(this._activeErrorClass);
-    this._errorTextElement.textContent = '';
+  _hideInputError(errorTextElement, input) {
+    input.classList.remove(this._activeErrorClass)
+    errorTextElement.textContent = '';
   };
   
   disableButton() {
@@ -36,12 +33,12 @@ export default class FormValidator {
   
   // Проверка на валидность
   _checkInputValidity(input) {
-    this._errorTextElement = document.querySelector(`${this._errorClassTemplate}${input.name}`);
+    const errorTextElement = document.querySelector(`${this._errorClassTemplate}${input.name}`);
    //input по name
     if(!input.validity.valid) {
-      this._showInputError(input);
+      this._showInputError(errorTextElement, input);
     } else {
-      this._hideInputError(input);
+      this._hideInputError(errorTextElement, input);
     }
   };
   
@@ -54,13 +51,13 @@ export default class FormValidator {
   };
   
   _hasInvalidInput() {
-    return Array.from(this._inputList).some((input) => !input.validity.valid);
+    return this._inputList.some((input) => !input.validity.valid);
   };
   
-  _setEventListeners(form) {
+  _setEventListeners() {
     //отмена отправки формы 
     this._toggleButtonState();
-    form.addEventListener('submit', (evt) => {
+    this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
     });
   

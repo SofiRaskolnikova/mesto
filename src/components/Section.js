@@ -12,7 +12,7 @@ export default class Section {
     })
   }
 
-  addItem(DomElement){
-    this._container.prepend(DomElement);
+  addItem(domElement){
+    this._container.prepend(domElement);
   }
 }

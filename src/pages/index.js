@@ -18,6 +18,18 @@ import {
   configUserInfo,
 } from '../utils/constants.js';
 import './index.css';
+import Api from '../components/Api.js';
+
+const api = new Api({
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-69',
+  headers: {
+    authorization: 'f57cff3f-49b2-4341-8424-837c8e6008af',
+    'Content-Type': 'application/json'
+  }
+}); 
+
+api.getInfo()
+  .then(res => console.log(res))
 
 const profileFormValidator = new FormValidator(config, formProfileElement);
 

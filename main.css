@@ -21,7 +21,7 @@
 .popup__button-save{background-color:#000;border:none;color:#fff;cursor:pointer;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:400;line-height:22px;margin:0 0 37px;min-height:50px;min-width:358px;padding:0;text-align:center}.popup__button-save:hover{opacity:.8}@media (max-width:614px){.popup__button-save{font-size:14px;line-height:17px;margin-bottom:25px;min-height:46px;min-width:238px}}
 .popup__content{background-color:#fff;border-radius:10px;justify-content:center;margin:auto;max-width:430px;padding:0 36px;position:relative}@media (max-width:614px){.popup__content{max-width:282px;padding-left:22px;padding-right:22px}}
 .popup__form{margin:0;padding:0}
-.popup__input-container{background-color:#fff;border:none;display:flex;flex-direction:column;margin:0 0 48px;padding:0}@media (max-width:614px){.popup__input-container{margin-bottom:45px}}
+.popup__input-container{background-color:#fff;border:none;display:flex;flex-direction:column;margin:0 0 18px;padding:0}@media (max-width:614px){.popup__input-container{margin-bottom:45px}}
 .popup__item{background-color:transparent;border:none;border-bottom:1px solid rgba(0,0,0,.2);box-sizing:border-box;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:17px;margin:0;max-height:27px;overflow:hidden;padding:0 0 13px;text-overflow:ellipsis;white-space:nowrap}.popup__error_visible{border-bottom:1px solid red}
 .popup__title{font-family:Inter,Arial,sans-serif;font-size:24px;font-weight:900;line-height:29px;margin-bottom:50px;margin-top:34px;padding:0}@media (max-width:614px){.popup__title{font-size:18px;line-height:22px;margin-bottom:75px;margin-top:25px}}
 .popup_opened{display:flex;opacity:1;visibility:visible}
@@ -31,7 +31,7 @@
 .profile__container{align-items:center;display:flex;gap:18px;margin:0;padding:0}@media (max-width:320px){.profile__container{gap:10px;padding-left:33px}}
 .profile__content{align-items:center;display:flex;flex-wrap:wrap}@media (max-width:651px){.profile__content{margin-bottom:36px}}@media (max-width:501px){.profile__content{justify-content:center;text-align:center}@media (max-width:651px){.profile__content{margin-bottom:34px}}}
 .profile__image-container{margin:0;padding:4px 27px 4px 0}@media (max-width:320px){.profile__image-container{margin-bottom:18px;margin-right:0;padding-left:23px}}
-.profile__image{border-radius:50%;max-height:120px;-o-object-fit:cover;object-fit:cover}
+.profile__image{border-radius:50%;height:120px;-o-object-fit:cover;object-fit:cover;width:120px}.profile__image:hover{background-image:url(93c771f5f8582261951d.png);opacity:.5;position:relative;z-index:2}
 .profile__info{display:flex;flex-direction:column;max-width:336px;row-gap:9px}@media (max-width:440px){.profile__info{gap:7px;max-width:282px}}
 .profile__text{color:#fff;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:400;line-height:21px;margin:0;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:nowrap}@media (max-width:1050px){.profile__text{font-size:16px}}@media (max-width:440px){.profile__text{font-size:14px;line-height:17px}}
 .profile__title{color:#fff;font-family:Inter,Arial,sans-serif;font-size:42px;font-weight:500;line-height:48px;margin:0;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:nowrap}@media (max-width:1050px){.profile__title{font-size:30px}}@media (max-width:440px){.profile__title{font-size:27px;line-height:33px}}
@@ -41,4 +41,6 @@
 .popup-image__text{color:#fff;font-family:Inter,Arial,sans-serif;font-size:12px;font-weight:400;margin:0;max-width:291px;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:nowrap}
 .popup__item-error{color:red;display:block;font-size:12px;font-weight:400;margin:0;max-width:358px;min-height:30px;padding:0}
 .popup__button_disable{background-color:#fff;border:1px solid rgba(0,0,0,.2);border-radius:2px;color:rgba(0,0,0,.2);pointer-events:none}
+.profile__button-avatar{background-color:#000;background-image:url(93c771f5f8582261951d.png);background-position:50%;background-repeat:no-repeat;border:1px solid red;margin-bottom:-9px;min-height:24px;min-width:24px;padding:0}
+.element__like-container{align-items:center;display:flex;flex-direction:column}
 

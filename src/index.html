@@ -14,7 +14,7 @@
       <section class="profile">
         <div class="profile__content">
         <div class="profile__image-container">
-          <img class="profile__image" src="<%=require('./images/image.jpg')%>" alt="Аватар профиля.">
+          <img class="profile__image" src="#" alt="Аватар профиля." >
         </div>
         <div class="profile__info">
           <div class="profile__container">
@@ -44,12 +44,29 @@
           <input required type="text" name="userjob" placeholder="Должность" class="popup__item popup__item_input-job" minlength="2" maxlength="200">
           <span class="popup__item-error popup__item-error_type_userjob"></span>
         </fieldset>
-        <button type="submit"  class="button popup__button-save popup-edit__button-save popup__button">Сохранить</button>
+        <button type="submit"  class="button popup__button-save popup-edit__button-save popup__button popup__button-text">Сохранить</button>
        </form>
       </div>
       <button type="button" class="button popup__button-close popup-edit__button-close"></button>
     </div>
   </div>
+
+  <div class="popup popup-avatar">
+    <div class="popup__content">
+     <h2 class="popup__title">Обновить аватар</h2>
+     <div class="popup__form">
+       <form method="post" name="avatar_form" id="form-avatar" class="form" novalidate>
+        <fieldset class="popup__input-container">
+          <input required type="url" name="useravatar" placeholder="Ссылка на картинку" class="popup__item popup__item_input-avatar">
+          <span class="popup__item-error popup__item-error_type_useravatar"></span>
+        </fieldset>
+        <button type="submit"  class="button popup__button-save popup-edit__button-save popup__button popup__button-text">Сохранить</button>
+       </form>
+      </div>
+      <button type="button" class="button popup__button-close popup-edit__button-close"></button>
+    </div>
+  </div>
+
   <div class="popup popup-add">
     <div class="popup__content">
      <h2 class="popup__title">Новое место</h2>
@@ -61,10 +78,21 @@
           <input required type="url" name="link" id="link" placeholder="Ссылка на картинку" class="popup__item popup__item_place-url">
           <span class="popup__item-error popup__item-error_type_link"></span>
         </fieldset>
-        <button type="submit" class="button popup__button-save popup-add__button-save popup__button">Создать</button>
+        <button type="submit" class="button popup__button-save popup-add__button-save popup__button popup__button-text">Создать</button>
        </form>
       </div>
       <button type="button" class="button popup__button-close popup-add__button-close"></button>
+    </div>
+  </div>
+  <div class="popup popup-delete">
+    <div class="popup__content">
+     <h2 class="popup__title">Вы уверены?</h2>
+     <div class="popup__form">
+       <form  name="delete_form" id="form-delete" class="form" novalidate>
+        <button type="submit"  class="button popup__button-save popup-edit__button-save popup__button">Да</button>
+       </form>
+      </div>
+      <button type="button" class="button popup__button-close popup-edit__button-close"></button>
     </div>
   </div>
   <div class="popup popup-image">
@@ -79,7 +107,10 @@
       <img class="element__image" src="#" alt="#">
         <div class="element__container">
           <h2 class="element__title"></h2>
-          <button type="button" class="element__button"></button>
+          <div class ="element__like-container">
+            <button type="button" class="element__button"></button>
+            <span class="element__counter"></span>
+          </div>
           <button type="reset" class="element__button-reset"></button>
         </div>
     </article>

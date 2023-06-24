@@ -2,6 +2,7 @@ export default class UserInfo {
   constructor(configUserInfo) {
     this._pofileName = document.querySelector(configUserInfo.userNameSelector);
     this._pfofileJob = document.querySelector(configUserInfo.userJobSelector);
+    this._profileAvatar = document.querySelector(configUserInfo.userAvatarSelector);
   }
 
   getUserInfo() {
@@ -11,8 +12,9 @@ export default class UserInfo {
     }
   }
 
-  setUserInfo (userData) {
-    this._pofileName.textContent = userData.username;
-    this._pfofileJob.textContent = userData.userjob;
+  setUserInfo({username, userjob, useravatar}) {
+    this._pofileName.textContent = username;
+    this._pfofileJob.textContent = userjob;
+    this._profileAvatar.src = useravatar
   }
 }

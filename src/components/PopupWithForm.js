@@ -5,30 +5,36 @@ export default class PopupWithForm extends Popup {
     super(popupSelector);
     this._submitFunction = submitFunction;
     this._form = this._popup.querySelector('.form');
-    this._inputList = this._form.querySelectorAll('.popup__item');   
+    this._inputList = this._form.querySelectorAll('.popup__item');
+    this._submitButton = this._form.querySelector('.popup__button-text');
+    this._textDefault = this._submitButton.textContent
   }
 
   _getInputValues() {
-    const values = {};
+    this._values = {};
     this._inputList.forEach(input => {
-      values[input.name] = input.value
+      this._values[input.name] = input.value
     })
-    return values
+    return this._values
   }
 
   setInputValues(userData) {
     this._inputList.forEach(input => {
-        input.value = userData[input.name]
+      input.value = userData[input.name]
     }) 
   }
 
   setEventListeners() {
-    super.setEventListeners(Popup)
+    super.setEventListeners()
     this._form.addEventListener('submit', evt => {
       evt.preventDefault();
+      this._submitButton.textContent = `Сохранение...`
       this._submitFunction(this._getInputValues());
-      this.close();
     })
+  }
+
+  loading() {
+    this._submitButton.textContent = this._textDefault
   }
 
   close() {

@@ -1,37 +1,4 @@
-const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-      alt: 'Архыз'
-    },
-      {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-        alt:  'Челябинская область'
-      },
-      {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-        alt:  'Иваново'
-      },
-      {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-        alt:   'Камчатка'
-      },
-      {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-        alt:  'Холмогорский район'
-      },
-      {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-        alt:  'Байкал'
-    
-      }
-  ];
-  
+
 const buttonEditProfile = document.querySelector('.profile__button-edit');
 const buttonAddPrifile = document.querySelector('.profile__botton-add');
 const formProfileElement = document.querySelector('#form-edit');
@@ -40,10 +7,14 @@ const popupProfileSelector = '.popup-edit';
 const popupCardSelector = '.popup-add';
 const popupImageSelector = '.popup-image';
 const elementSelector = '.elements';
+const popupEditAvatar = '.popup-avatar';
+const buttonEditAvatarProfile = document.querySelector('.profile__image');
+const popupDeleteSelector = '.popup-delete';
 
 const configUserInfo = {
   userNameSelector: '.profile__title',
   userJobSelector: '.profile__text',
+  userAvatarSelector: '.profile__image'
 }
 
 const config = {
@@ -57,7 +28,6 @@ const config = {
 };
 
 export {
-  initialCards,
   buttonEditProfile,
   buttonAddPrifile,
   formProfileElement,
@@ -68,4 +38,7 @@ export {
   elementSelector,
   config,
   configUserInfo,
+  popupEditAvatar,
+  buttonEditAvatarProfile,
+  popupDeleteSelector,
 }

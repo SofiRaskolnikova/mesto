@@ -8,7 +8,7 @@ const popupCardSelector = '.popup-add';
 const popupImageSelector = '.popup-image';
 const elementSelector = '.elements';
 const popupEditAvatar = '.popup-avatar';
-const buttonEditAvatarProfile = document.querySelector('.profile__image');
+const buttonEditAvatarProfile = document.querySelector('.button-overlay');
 const popupDeleteSelector = '.popup-delete';
 
 const configUserInfo = {

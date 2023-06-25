@@ -118,7 +118,7 @@ const popupCard = new PopupWithForm (popupCardSelector, (inputValues) => {
   Promise.all([api.addCard(inputValues), api.getInfo()])
     .then(([cardData, userData]) => {
       cardData.myId = userData._id;
-      section.addItem(createCard(cardData))
+      section.addItemPrepend(createCard(cardData))
       popupCard.close()
     })
     .catch((error) => 

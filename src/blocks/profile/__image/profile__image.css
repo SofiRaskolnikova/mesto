@@ -4,11 +4,3 @@
   height: 120px;
   border-radius: 50%;
 }
-  
-.profile__image:hover{
-  opacity: .5;
-  background-image: url(../../../images/avatar_edit_button.png);
-  z-index: 2;
-  position: relative;
-
-}

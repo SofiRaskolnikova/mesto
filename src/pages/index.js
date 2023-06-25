@@ -112,7 +112,7 @@ const popupAvatarEdit = new PopupWithForm(popupEditAvatar, inputValues => {
 
 
 const popupCard = new PopupWithForm (popupCardSelector, (inputValues) => {
-  Promise.all([api.getInfo(), api.addCard(inputValues)])
+  Promise.all([api.addCard(inputValues), api.getInfo()])
     .then(([cardData, userData]) => {
       cardData.myId = userData._id;
       section.addItem(createCard(cardData))
@@ -142,6 +142,7 @@ popupImage.setEventListeners();
 popupProfile.setEventListeners();
 popupCard.setEventListeners();
 popupAvatarEdit.setEventListeners()
+popupDelete.setEventListeners()
 
 profileFormValidator.enableValidation();
 newCardFormValidator.enableValidation();

@@ -33,22 +33,6 @@ export default class Api {
     })
   }
   
-  addCard(cardData) {
-    return fetch(`${this._url}/cards`, {
-      method: 'POST',
-      headers: this._headers,
-      body: JSON.stringify({
-        name: cardData.name,
-        link: cardData.link,
-      })
-    })
-    .then(res => {
-      if(res.ok) {
-        return res.json()
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    })
-  }
 
   addLike(cardId) {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
@@ -103,6 +87,23 @@ export default class Api {
       headers: this._headers,
       body: JSON.stringify({
         avatar: userData.useravatar
+      })
+    })
+    .then(res => {
+      if(res.ok) {
+        return res.json()
+      }
+      return Promise.reject(`Ошибка: ${res.status}`);
+    })
+  }
+
+  addCard(cardData) {
+    return fetch(`${this._url}/cards`, {
+      method: 'POST',
+      headers: this._headers,
+      body: JSON.stringify({
+        name: cardData.name,
+        link: cardData.link,
       })
     })
     .then(res => {

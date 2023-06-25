@@ -18,6 +18,7 @@ import {
   popupEditAvatar,
   buttonEditAvatarProfile,
   popupDeleteSelector,
+  formAvatarElement,
 } from '../utils/constants.js';
 import './index.css';
 import Api from '../components/Api.js';
@@ -34,6 +35,8 @@ const api = new Api({
 const profileFormValidator = new FormValidator(config, formProfileElement);
 
 const newCardFormValidator = new FormValidator(config, formAddElement);
+
+const newAvatarFormValidator = new FormValidator(config, formAvatarElement)
 
 const userInfo = new UserInfo(configUserInfo);
 
@@ -130,7 +133,9 @@ buttonEditProfile.addEventListener('click', () => {
 })
 
 buttonEditAvatarProfile.addEventListener('click', () => {
+  popupAvatarEdit.setInputValues(userInfo.getUserInfo())
   popupAvatarEdit.open()
+  newAvatarFormValidator.disableButton()
 })
 
 buttonAddPrifile.addEventListener('click', () => {

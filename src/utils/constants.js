@@ -10,6 +10,7 @@ const elementSelector = '.elements';
 const popupEditAvatar = '.popup-avatar';
 const buttonEditAvatarProfile = document.querySelector('.button-overlay');
 const popupDeleteSelector = '.popup-delete';
+const formAvatarElement = document.querySelector('#form-avatar')
 
 const configUserInfo = {
   userNameSelector: '.profile__title',
@@ -41,4 +42,5 @@ export {
   popupEditAvatar,
   buttonEditAvatarProfile,
   popupDeleteSelector,
+  formAvatarElement,
 }

@@ -6,10 +6,13 @@ export default class UserInfo {
   }
 
   getUserInfo() {
-    return {
+    const userInfo = {
       username: this._pofileName.textContent,
       userjob: this._pfofileJob.textContent,
+      useravatar: this._profileAvatar.src,
     }
+
+    return userInfo
   }
 
   setUserInfo({username, userjob, useravatar}) {

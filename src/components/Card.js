@@ -1,6 +1,5 @@
 export default class Card {
   constructor(cardData, templateSelector, openImagePopup, openDeletePopup, changeLike) {
-    console.log(cardData);
     this._cardData = cardData;
     this._myId = cardData.myId;
     this._ownerId = cardData.owner._id;
@@ -13,8 +12,6 @@ export default class Card {
     this._openImagePopup = openImagePopup;
     this._openDeletePopup = openDeletePopup;
     this._changeLike = changeLike;
-    console.log(this._myId);
-    console.log(this._ownerId);
   }
 
   _getTemplate() {

@@ -1,7 +1,7 @@
 export default class Card {
-  constructor(cardData, templateSelector, openImagePopup, openDeletePopup, changeLike) {
+  constructor(cardData,  myId, templateSelector, openImagePopup, openDeletePopup, changeLike) {
     this._cardData = cardData;
-    this._myId = cardData.myId;
+    this._myId = myId;
     this._ownerId = cardData.owner._id;
     this._likes = cardData.likes;
     this._LenLikes = cardData.likes.length;
@@ -12,6 +12,8 @@ export default class Card {
     this._openImagePopup = openImagePopup;
     this._openDeletePopup = openDeletePopup;
     this._changeLike = changeLike;
+    console.log(this._myId);
+    
   }
 
   _getTemplate() {
@@ -100,6 +102,5 @@ export default class Card {
     }); 
   }
 }
-
     
 

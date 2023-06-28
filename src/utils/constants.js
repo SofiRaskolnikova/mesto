@@ -18,6 +18,7 @@ const configUserInfo = {
   userAvatarSelector: '.profile__image'
 }
 
+
 const config = {
   formSelector : '.form',
   inputSelector: '.popup__item',
@@ -30,6 +31,7 @@ const config = {
 
 export {
   buttonEditProfile,
+  configUserInfo,
   buttonAddPrifile,
   formProfileElement,
   formAddElement,
@@ -38,7 +40,6 @@ export {
   popupImageSelector,
   elementSelector,
   config,
-  configUserInfo,
   popupEditAvatar,
   buttonEditAvatarProfile,
   popupDeleteSelector,

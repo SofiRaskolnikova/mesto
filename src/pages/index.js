@@ -53,8 +53,25 @@ const popupDelete = new PopupWithDeleteForm(popupDeleteSelector, ({card, cardId}
     )
 })
 
+let myId
+
+Promise.all([api.getInitialCard(), api.getInfo()])
+  .then(([cardData, userData]) => {
+    myId = userData._id;
+    
+    userInfo.setUserInfo({
+      username: userData.name, 
+      userjob: userData.about,
+      useravatar: userData.avatar,
+    });
+    section.addCardFromArray(cardData);
+  })
+  .catch((error) => 
+    console.error(`Возникла ошибка при загрузке ${error}`)
+  )
+
 function createCard(item) {
-  const card = new Card(item, '#card', popupImage.open, popupDelete.open, (likeButton, cardId) => {
+  const card = new Card(item, myId, '#card', popupImage.open, popupDelete.open, (likeButton, cardId) => {
     if (likeButton.classList.contains('element__button_active')) {
       api.deleteLike(cardId)
         .then(res => {
@@ -115,9 +132,8 @@ const popupAvatarEdit = new PopupWithForm(popupEditAvatar, inputValues => {
 
 
 const popupCard = new PopupWithForm (popupCardSelector, (inputValues) => {
-  Promise.all([api.addCard(inputValues), api.getInfo()])
-    .then(([cardData, userData]) => {
-      cardData.myId = userData._id;
+  api.addCard(inputValues)
+    .then((cardData) => {
       section.addItemPrepend(createCard(cardData))
       popupCard.close()
     })
@@ -152,19 +168,3 @@ popupDelete.setEventListeners()
 profileFormValidator.enableValidation();
 newCardFormValidator.enableValidation();
 
-Promise.all([api.getInitialCard(), api.getInfo()])
-  .then(([cardData, userData]) => {
-    cardData.forEach(item => 
-      item.myId = userData._id
-    );
-
-    userInfo.setUserInfo({
-      username: userData.name, 
-      userjob: userData.about,
-      useravatar: userData.avatar,
-    });
-    section.addCardFromArray(cardData);
-  })
-  .catch((error) => 
-    console.error(`Возникла ошибка при загрузке ${error}`)
-  )

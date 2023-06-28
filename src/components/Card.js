@@ -11,9 +11,7 @@ export default class Card {
     this._templateSelector = templateSelector;
     this._openImagePopup = openImagePopup;
     this._openDeletePopup = openDeletePopup;
-    this._changeLike = changeLike;
-    console.log(this._myId);
-    
+    this._changeLike = changeLike; 
   }
 
   _getTemplate() {
